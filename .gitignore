@@ -1,0 +1,8 @@
+x64
+*.pyc
+*.suo
+*.vspscc
+*.vssscc
+*.sdf
+*.opensdf
+*.pyd

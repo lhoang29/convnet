@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\common\matrix.h" />
+    <ClInclude Include="include\common\matrix_funcs.h" />
+    <ClInclude Include="include\common\queue.h" />
+    <ClInclude Include="include\common\thread.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\common\matrix.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="src\convnet.cu" />
+    <CudaCompile Include="src\cost.cu" />
+    <CudaCompile Include="src\cudaconv2\conv_util.cu" />
+    <CudaCompile Include="src\cudaconv2\filter_acts.cu" />
+    <CudaCompile Include="src\cudaconv2\img_acts.cu" />
+    <CudaCompile Include="src\cudaconv2\weight_acts.cu" />
+    <CudaCompile Include="src\data.cu" />
+    <CudaCompile Include="src\layer.cu" />
+    <CudaCompile Include="src\layer_kernels.cu" />
+    <CudaCompile Include="src\neuron.cu" />
+    <CudaCompile Include="src\nvmatrix\nvmatrix.cu" />
+    <CudaCompile Include="src\nvmatrix\nvmatrix_kernels.cu" />
+    <CudaCompile Include="src\pyconvnet.cu" />
+    <CudaCompile Include="src\util.cu" />
+    <CudaCompile Include="src\weights.cu" />
+    <CudaCompile Include="src\worker.cu" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cublas.dll" />
+    <None Include="cudart.dll" />
+    <None Include="Documentation.txt" />
+    <None Include="example-layers\imnet-kriz-layers-finegrain.cfg" />
+    <None Include="example-layers\imnet-kriz-layers.cfg" />
+    <None Include="example-layers\imnet-kriz-params.cfg" />
+    <None Include="example-layers\layer-params-18pct.cfg" />
+    <None Include="example-layers\layer-params-19pct.cfg" />
+    <None Include="example-layers\layer-params-80sec.cfg" />
+    <None Include="example-layers\layer-params-conv-local-11pct.cfg" />
+    <None Include="example-layers\layer-params-conv-local-13pct.cfg" />
+    <None Include="example-layers\layer-params-example.cfg" />
+    <None Include="example-layers\layer-params.gc.cfg" />
+    <None Include="example-layers\layers-18pct.cfg" />
+    <None Include="example-layers\layers-19pct.cfg" />
+    <None Include="example-layers\layers-80sec.cfg" />
+    <None Include="example-layers\layers-conv-local-11pct.cfg" />
+    <None Include="example-layers\layers-conv-local-13pct.cfg" />
+    <None Include="example-layers\layers-example.cfg" />
+    <None Include="example-layers\layers.gc.cfg" />
+    <None Include="extractFeatures.bat" />
+    <None Include="include\convnet.cuh" />
+    <None Include="include\cost.cuh" />
+    <None Include="include\cudaconv2\conv_util.cuh" />
+    <None Include="include\cudaconv2\cudaconv2.cuh" />
+    <None Include="include\data.cuh" />
+    <None Include="include\layer.cuh" />
+    <None Include="include\layer_kernels.cuh" />
+    <None Include="include\neuron.cuh" />
+    <None Include="include\nvmatrix\nvmatrix.cuh" />
+    <None Include="include\nvmatrix\nvmatrix_kernels.cuh" />
+    <None Include="include\nvmatrix\nvmatrix_operators.cuh" />
+    <None Include="include\pyconvnet.cuh" />
+    <None Include="include\util.cuh" />
+    <None Include="include\weights.cuh" />
+    <None Include="include\worker.cuh" />
+    <None Include="libgcc_s_seh-1.dll" />
+    <None Include="libgfortran-3.dll" />
+    <None Include="libopenblas.dll" />
+    <None Include="libquadmath-0.dll" />
+    <None Include="libwinpthread-1.dll" />
+    <None Include="pthreadVC2_x64.dll" />
+    <None Include="python27.dll" />
+    <None Include="run.bat" />
+    <None Include="train.bat" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1987B5DE-3702-3F2A-813C-3A0C54F000E9}</ProjectGuid>
+    <RootNamespace>cudaconvnet</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+    <ProjectName>cudaconvnet</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 5.0.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\Python27\include;C:\Python27\Lib\site-packages\numpy\core\include\numpy;D:\v-yabai\LIBS\Pre-built.2\include;D:\v-yabai\LIBS\include;C:\ProgramData\NVIDIA Corporation\CUDA Samples\v5.0\common\inc;D:\v-yabai\DNN\cuda-convnet-vs-proj\include\nvmatrix;D:\v-yabai\DNN\cuda-convnet-vs-proj\include\cudaconv2;D:\v-yabai\DNN\cuda-convnet-vs-proj\include\common;D:\v-yabai\DNN\cuda-convnet-vs-proj\include;%(AdditionalIncludeDirectories);$(CudaToolkitIncludeDir)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>MS_NO_COREDLL;Py_NO_ENABLE_SHARED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>D:\v-yabai\LIBS\libopenblas.lib;cudart.lib;D:\v-yabai\LIBS\Pre-built.2\lib\pthreadVCE2.lib;C:\Python27\libs\python27.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Python27\include;C:\Python27\libs;D:\v-yabai\LIBS\common\lib\$(PlatformName);D:\v-yabai\LIBS\Pre-built.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <CudaCompile>
+      <Include>D:\v-yabai\LIBS\common\inc;%(Include)</Include>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>C:\Python27\Lib\site-packages\numpy\core\include\numpy;C:\Python27\include;C:\Users\lhoang\Downloads\LIBS\LIBS\Pre-built.2\include;C:\Users\lhoang\Downloads\LIBS\LIBS\include;C:\ProgramData\NVIDIA Corporation\CUDA Samples\v5.0\common\inc;D:\convnet_ybai\convnet\include\nvmatrix;D:\convnet_ybai\convnet\include\cudaconv2;D:\convnet_ybai\convnet\include\common;D:\convnet_ybai\convnet\include;%(AdditionalIncludeDirectories);$(CudaToolkitIncludeDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>C:\Python27\libs\python27.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\lib\Win32\cublas.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\lib\Win32\cudart.lib;C:\Users\lhoang\Downloads\LIBS\LIBS\libopenblas.lib;C:\Users\lhoang\Downloads\LIBS\LIBS\Pre-built.2\lib\pthreadVSE2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Python27\Lib\site-packages\numpy\core\include\numpy;C:\Python27\include;C:\Users\lhoang\Downloads\LIBS\LIBS\Pre-built.2\include;C:\Users\lhoang\Downloads\LIBS\LIBS\include;C:\ProgramData\NVIDIA Corporation\CUDA Samples\v5.0\common\inc;D:\convnet_ybai\convnet\include\nvmatrix;D:\convnet_ybai\convnet\include\cudaconv2;D:\convnet_ybai\convnet\include\common;D:\convnet_ybai\convnet\include;%(AdditionalIncludeDirectories);$(CudaToolkitIncludeDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\Users\lhoang\Downloads\LIBS\LIBS;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>C:\Python27\libs\python27.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\lib\x64\cublas.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\lib\x64\cudart.lib;C:\Users\lhoang\Downloads\LIBS\LIBS\libopenblas.lib;C:\Users\lhoang\Downloads\LIBS\LIBS\pthreadVC2_x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Python27\Lib\site-packages\numpy\core\include\numpy;C:\Python27\include;$(SolutionDir)LIBS\LIBS\Pre-built.2\include;$(SolutionDir)LIBS\LIBS\include;C:\ProgramData\NVIDIA Corporation\CUDA Samples\v5.0\common\inc;$(SolutionDir)include\nvmatrix;$(SolutionDir)include\cudaconv2;$(SolutionDir)include\common;$(SolutionDir)include;%(AdditionalIncludeDirectories);$(CudaToolkitIncludeDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link />
+    <Link>
+      <AdditionalDependencies>C:\Python27\libs\python27.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\lib\x64\cublas.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\lib\x64\cudart.lib;$(SolutionDir)LIBS\LIBS\libopenblas.lib;$(SolutionDir)LIBS\LIBS\pthreadVC2_x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)LIBS\LIBS;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Library Include="libopenblas.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 5.0.targets" />
+  </ImportGroup>
+</Project>
